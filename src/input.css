@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+#hero {
+  background-image: url('../images/section1-background.png');
+}
+.backdrop-blur {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .backdrop-blur {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+.marquee-container:hover div {
+  animation-play-state: paused;
+}
+.sticky-header {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
+  border-radius: 1.6rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+@media (max-width: 75em) {
+  #header-actions {
+    display: none;
+  }
+}
+@media (max-width: 59em) {
+  #hero {
+    background-image: url('../images/section1-background-mobile.jpg');
+  }
+}
