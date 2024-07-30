@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./build/*.{html,js}'],
-  prefix: 'tw-',
   theme: {
     screens: {
       'laptop/tablet': { max: '1200px' },
@@ -49,6 +48,7 @@ module.exports = {
       },
       backgroundSize: {
         '100%': '100% 100%',
+        '100-by-249': '100% 249%',
       },
       padding: {
         '6.7-by-19.2': '0.41872rem 1.2rem',
@@ -69,6 +69,7 @@ module.exports = {
       maxWidth: {
         '400px': '25rem',
         '570px': '35.625rem',
+        '39rem': '39rem',
       },
       gap: {
         13: '3.375rem',
@@ -90,5 +91,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };
